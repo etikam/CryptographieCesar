@@ -18,21 +18,35 @@ def caesar_cipher(message, key, mode):
 
 def index(request):
     message = ""
+    message_result=""
+    message_error_key =""
+    message_error_mode=""
+    key=""
     if(request.method == "POST"):
         
         # Récupération des entrées
         message = request.POST.get("message") #un champs de texte qui as reçu le message
         key = request.POST.get("key")   # un champ entier qui reçois qui reçois qui reçois la clé 
+        try:
+            key = int(key)
+        except:
+            message_error_key ="vous essayé de joué avec la clé"
         mode = request.POST.get("mode") # un champs boolean qui est reçois vrai s'il s'agit de crypté et qui reçois faut sinon
+        print(mode)
+        
         if mode:
             result = caesar_cipher(message, key, "Encrypt")
         else:
             result = caesar_cipher(message, key, "Decrypt")
         
-        message = result
-        
+        message_result = result
+    
     context = {
+        "message_result":message_result,
         "message":message,
+        "key":key,
+        "message_error_mode":message_error_mode,
+        "message_error_key":message_error_key,
     }
     
     return render(request,"index.html",context)
