@@ -5,7 +5,9 @@ from django.shortcuts import render
 def caesar_cipher(message, key, mode):
     result = ""
     for char in message:
-        if char.isalpha():
+        if ord(char) not in range(65,90) and ord(char) not in range(97,122):
+            result += char
+        elif char.isalpha():
             if char.islower():
                 base = ord('a')
             else:
