@@ -51,7 +51,7 @@ def index(request):
         "message_error_key":message_error_key,
     }
     
-    return render(request,"index.html",context)
+    return render(request,"base.html",context)
     
     
     
