@@ -19,5 +19,7 @@ from Crypto.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',index,name="index")
+    path('cesar',cesar,name="cesar"),
+    path('',index,name="index"),
+    path('cesarAllInOne/',cesarAllInOne, name="cesarAllInOne")
 ]

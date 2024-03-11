@@ -1,35 +1,47 @@
+{% load static %}
 <!DOCTYPE html>
+
 <html>
-{% block head %}
+
+    {% block head %}
+
     {% include "partials/head.html" %}
-
-{% endblock head %}
-
-<body class="w3-black">
+    <title> {% block title %}{% endblock title %}</title>
+    {% endblock head %}
     {% block body %}
 
-    <!-- Icon Bar (Sidebar - hidden on small screens) -->
-    {% include "partials/navbar.html" %}
+    <body class="w3-black">
 
-    <!-- Page Content -->
-    <div class="w3-padding-large" id="main">
-        <!-- Header/Home -->
+        <!-- Icon Bar (Sidebar - hidden on small screens) -->
+        {% include "partials/navbar.html" %}
+        {% block header %}
+        {% include "partials/content/header.html" %}
+        {% endblock header %}
+        <!-- Page Content -->
+        <div class="w3-padding-large" id="main">
+            {% block contenu %}
 
+            {% endblock contenu %}
+            <!-- Header/Home -->
 
-        <!-- About Section -->
+            <!-- About Section -->
 
+            <!-- Portfolio Section -->
 
-        <!-- Portfolio Section -->
+            <!-- Contact Section -->
 
+            <!-- Footer -->
+            {% block footer %}
+            {% include "partials/content/footer.html" %}{% endblock footer %}
 
-        <!-- Contact Section -->
+            <!-- END PAGE CONTENT -->
+        </div>
 
-        <!-- Footer -->
-
-
-        <!-- END PAGE CONTENT -->
-    </div>
+    </body>
     {% endblock body %}
-</body>
+
+    {% block script %}
+
+    {% endblock script %}
 
 </html>

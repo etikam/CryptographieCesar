@@ -1,10 +1,15 @@
 <head>
-    <title>Crytographie message</title>
+    {% load static %}
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+   
+    <link rel="stylesheet" href="{% static 'dist/css/bootstrap.min.css' %}">
+ 
     <style>
         body,
         h1,
@@ -36,6 +41,93 @@
             #main {
                 margin-left: 0
             }
+        }
+
+
+
+
+
+
+        .global{
+            background-color: rgba(0, 0, 0, 0.673);
+            padding: 3%;
+            width: 60%;
+
+        }
+
+        body{
+            /*background-image: url("{% static 'img/bg.jpg' %}");*/
+        }
+
+        form label{
+            
+            font-weight: 600;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: white;
+            font-size: 35;
+        }
+
+        
+        @keyframes saute {
+           
+            /* Augmentez la hauteur à laquelle la boule rebondit */
+            70%{
+                transform: translateY(-150px);
+            }
+            100% { transform: translateY(20px); } /* Revenez à la hauteur de départ */
+        }
+        @keyframes saute2 {
+           
+           
+            /* Augmentez la hauteur à laquelle la boule rebondit */
+            70%{
+                transform: translateY(-150px);
+            }
+            100% { transform: translateY(20px); } /* Revenez à la hauteur de départ */
+        }
+            
+        
+
+        .boule1{
+        animation: 1s saute infinite;
+        }
+        .boule2{
+            animation: infinite 1.3s saute2;
+        }
+        .global-title{
+            color: blue;
+            text-align: center;
+            font-weight: 700;
+            text-shadow: 2px 2px 2px white;
+            
+        }
+
+        .boule1,.boule2{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.375);
+            display: flex;
+        
+        
+        }
+
+        .boule-content{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .message{
+            background-color: white;
+            padding: 2%;
+        }
+        .body{
+            width: 100%;
+            height: 100%;
+            background-color: linear-gradient(rgba(0, 0, 0, 0.843),rgba(0, 0, 0, 0.661),rgba(0, 0, 0, 0.398),rgba(0, 0, 0, 0.004));
+        }
+        input{
+            background-color: rgba(51, 55, 60, 0.43);
         }
     </style>
 </head>
